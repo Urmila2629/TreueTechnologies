@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculate Me ! - A Caclulator Made My Me </title>
+  <style>
+    html,body
+    {
+      height: 100%;
+      width: 100%;
+    }
+
+    .button
+    {
+      padding: 20px;
+      width: 66px;
+      margin: 0 3px;
+      border: 2px solid black;
+      border-radius: 9px;
+      cursor: pointer;
+      background-color: lightgrey;
+    }
+    .row
+    {
+      margin: 8px 0 ;
+
+    }
+    .row input
+    {
+      font-size: 20px;
+      margin:0 ;
+      padding: 10px 0px;
+      border: 2px solid black;
+      border-radius: 5px;
+      width: 291px;
+    }
+    .caclu-center
+    {
+    text-align: center;
+    }
+    .bg-red
+    {
+      background: red;
+    }
+    .mx-auto
+    {
+      margin: auto;
+    }
+    .flex
+    {
+      display: flex;
+    }
+    .flex-col
+    {
+      flex-direction: column;
+    }
+    .items-center
+    {
+      align-items: center;
+    }
+  </style>
+</head>
+<body bgcolor="lightblue">
+  <h1 class="text-center">Welcome to Caclulator Me</h1>
+  <div class="container flex-col caclu-center mx-auto max-width-20"></div>
+    <div class="row">
+      <input type="text">
+      </div>
+      <div class="row">
+      <button class="button">C</button>
+      <button class="button">%</button>
+      <button class="button">M+</button>
+      <button class="button">M-</button>
+      </div>
+    <div class="row">
+    <button class="button">7</button>
+    <button class="button">8</button>
+    <button class="button">9</button>
+    <button class="button">*</button>
+    </div>
+    <div class="row">
+      <button class="button">4</button>
+      <button class="button">5</button>
+      <button class="button">6</button>
+      <button class="button">/</button>
+      </div>
+      <div class="row">
+        <button class="button">3</button>
+        <button class="button">2</button>
+        <button class="button">1</button>
+        <button class="button">+</button>
+        </div>
+        <div class="row">
+          <button class="button">0</button>
+          <button class="button">.</button>
+          <button class="button">=</button>
+          <button class="button">%</button>
+          </div>
+          <script>
+            let String ="";
+            let button = document.querySelectorAll('.button');
+            Array.from(button).forEach((button)=>
+            {
+              button.addEventListener('click',(e)=>
+              {
+                if(e.target.innerHTML=='=')
+                {
+                  String = eval(String);
+                  document.querySelector('input').value=String;
+                }
+                else if(e.target.innerHTML=='C')
+                {
+                  String = "";
+                  document.querySelector('input').value=String;
+                }
+                else
+                {
+                  console.log(e.target)
+                String = String + e.target.innerHTML;
+                document.querySelector('input').value=String;
+                }
+              });
+            });
+          </script>
+  </div>
+</body>
+</html>
